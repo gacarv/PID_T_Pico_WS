@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Web Server</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #9ddaec;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.0rem;
+                text-align: center;
+                color: #000000;
+                margin-bottom: 10px;
+            }
+            h2 {
+                font-size: 1.4rem;
+                color: #000000;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 1.2rem;
+                color: black;
+                line-height: 1.5;
+            }
+
+            /* Estilizando os botões */
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 0.8rem;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-right: 10px;
+                transition: background-color 0.3s;
+            }
+            a {
+                text-decoration: none;
+            }
+
+            /* Estilizando o contêiner de informações */
+            p, h2, input, button {
+                margin-left: 20px;
+            }
+            .container {
+                max-width: auto;
+                margin: 0 auto;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 20px;
+                background-color: #ffffffff;
+                border-radius: 20px;
+                margin-bottom: 20px;
+            }
+            .content {
+                display: flex;
+                justify-content: space-between;
+            }
+            .column {
+                width: 45%;
+                padding: 15px;
+                background: #f0f0f0;
+                border-radius: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body> 
+        <div class="container">
+            <h1>Thermal Plant Monitoring Web Server</h1>
+            <br>
+            <div class="content">
+                <div class="column">
+                    <form action="/set_setpoint.cgi" method="GET" style="width: 80%; padding: 10px;">
+                        <h2>Setpoint Selection</h2>
+                        <p>Define the desired temperature:</p>
+                        <input type="number" id="setpoint" name="setpoint" min="0" max="200" required placeholder="Enter a value between 25 and 200 &#176C" style="width: 80%; padding: 10px;">
+                        <br><br>
+                        <button>Change setpoint</button>
+                    </form>
+                </div>
+                <div class="column">
+                    <h2>Supervisory</h2>
+                    <p>Desired Temperature: <!--#setpoint--> &#176C</p>
+                    <p>Real Temperature: <!--#current_temperature--> &#176C</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
