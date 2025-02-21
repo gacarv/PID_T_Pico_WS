@@ -1,5 +1,5 @@
 /* =================================================================
-* PID Temperature Control of an Industrial Thermal Plant with Web Server
+* Development of Temperature PID Controller for Industrial Thermal Plant Model, using Raspberry Pi Pico W and Web Server
 * Final project of the Embedded Systems Training - IFMA / Embarca Tech
 * Author: Guilherme Abreu Carvalho
 * E-mail: eng.guilherme.ac@gmail.com
@@ -41,8 +41,8 @@
 #define BUZZER_FREQUENCY 100   // Frequency of the buzzer sound (in Hz)
 
 // --- Constants --- //
-const char WIFI_SSID[] = "MARCOS_LAU";       // Wi-Fi network name
-const char WIFI_PASSWORD[] = "MARCOS303030"; // Wi-Fi network password
+const char WIFI_SSID[] = "YOU_SSID";       // Wi-Fi network name
+const char WIFI_PASSWORD[] = "YOU_PASSWORD"; // Wi-Fi network password
 static double previous_error = 0.0;          // Previous error for derivative term
 static double integral = 0.0;                // Integral sum
 double current_temperature = 25.0;           // Initial temperature
