@@ -41,8 +41,8 @@
 #define BUZZER_FREQUENCY 100   // Frequency of the buzzer sound (in Hz)
 
 // --- Constants --- //
-const char WIFI_SSID[] = "YOU_SSID";       // Wi-Fi network name
-const char WIFI_PASSWORD[] = "YOU_PASSWORD"; // Wi-Fi network password
+const char WIFI_SSID[] = "NETWORK_NAME";       // Wi-Fi network name
+const char WIFI_PASSWORD[] = "NETWORK_PASSWORD"; // Wi-Fi network password
 static double previous_error = 0.0;          // Previous error for derivative term
 static double integral = 0.0;                // Integral sum
 double current_temperature = 25.0;           // Initial temperature
@@ -244,6 +244,8 @@ double pid_controller(double error)
     return control_signal;
 }
 
+int k = 0;
+
 int main()
 {
     // Initialize standard input and output
@@ -277,9 +279,11 @@ int main()
 
         // Check if the temperature is within an acceptable range of the setpoint
         bool controlled = fabs(setpoint - current_temperature) < 0.001;
-        
+
         // Update the display with the current system status
         update_display(controlled, setpoint, current_temperature, error);
+
+        printf("Setpoint: %.2f, Real Temperature: %.2f, Error: %.2f\n", setpoint, current_temperature, error);
 
         if (controlled)
         {
@@ -304,5 +308,7 @@ int main()
 
         // Wait for 500 milliseconds before the next control iteration
         sleep_ms(500);
+
     }
+
 }

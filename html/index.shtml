@@ -88,7 +88,6 @@
                 <div class="column">
                     <h2>Supervisory</h2>
                     <p>Desired Temperature: <!--#setpoint--> &#176C</p>
-                    <p>Real Temperature: <!--#current_temperature--> &#176C</p>
                 </div>
             </div>
         </div>
